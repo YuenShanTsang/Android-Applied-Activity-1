@@ -5,6 +5,10 @@ VisualStudioVersion = 17.0.31611.283
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Extract the Vowels", "Extract the Vowels\Extract the Vowels.csproj", "{BC257B10-F294-47C0-A76B-3FFEC1AAA2CA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Unit Conversion", "Unit Conversion\Unit Conversion.csproj", "{C8BA474A-41B5-4490-8234-1D8551F0C691}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Calculate Change for a Purchase", "Calculate Change for a Purchase\Calculate Change for a Purchase.csproj", "{9469E16A-CFFB-4679-8B59-E722EAC2C305}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -17,6 +21,14 @@ Global
 		{BC257B10-F294-47C0-A76B-3FFEC1AAA2CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC257B10-F294-47C0-A76B-3FFEC1AAA2CA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{BC257B10-F294-47C0-A76B-3FFEC1AAA2CA}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{C8BA474A-41B5-4490-8234-1D8551F0C691}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8BA474A-41B5-4490-8234-1D8551F0C691}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8BA474A-41B5-4490-8234-1D8551F0C691}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8BA474A-41B5-4490-8234-1D8551F0C691}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9469E16A-CFFB-4679-8B59-E722EAC2C305}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9469E16A-CFFB-4679-8B59-E722EAC2C305}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9469E16A-CFFB-4679-8B59-E722EAC2C305}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9469E16A-CFFB-4679-8B59-E722EAC2C305}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
