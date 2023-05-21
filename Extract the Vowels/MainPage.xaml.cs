@@ -1,25 +1,49 @@
-﻿namespace Extract_the_Vowels;
+﻿using Microsoft.Maui.Controls;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
-public partial class MainPage : ContentPage
+namespace Extract_the_Vowels
 {
-	int count = 0;
+    public partial class MainPage : ContentPage
+    {
+        public MainPage()
+        {
+            InitializeComponent();
+        }
 
-	public MainPage()
-	{
-		InitializeComponent();
-	}
+        private void AnalyzeButton_Clicked(object sender, EventArgs e)
+        {
+            string inputWord = InputEntry.Text.ToLower();
 
-	private void OnCounterClicked(object sender, EventArgs e)
-	{
-		count++;
+            List<char> vowels = new List<char> { 'a', 'e', 'i', 'o', 'u' };
+            List<char> vowelList = new List<char>();
+            List<char> nonVowelList = new List<char>();
 
-		if (count == 1)
-			CounterBtn.Text = $"Clicked {count} time";
-		else
-			CounterBtn.Text = $"Clicked {count} times";
+            foreach (char c in inputWord)
+            {
+                if (vowels.Contains(c))
+                {
+                    if (!vowelList.Contains(c))
+                    {
+                        vowelList.Add(c);
+                    }
+                }
+                else
+                {
+                    nonVowelList.Add(c);
+                }
+            }
 
-		SemanticScreenReader.Announce(CounterBtn.Text);
-	}
+            ResultLabel.Text = "Vowels in the word:";
+            foreach (char vowel in vowelList)
+            {
+                int vowelCount = inputWord.Count(c => c == vowel);
+                ResultLabel.Text += $"\n- {vowel} ({vowelCount} occurrence(s))";
+            }
+
+            string wordWithoutVowels = new string(nonVowelList.ToArray());
+            ResultLabel.Text += $"\n\nWord without vowels: {wordWithoutVowels}";
+        }
+    }
 }
-
-
