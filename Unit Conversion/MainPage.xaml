@@ -4,39 +4,84 @@
              x:Class="Unit_Conversion.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
+        <StackLayout
             Spacing="25"
             Padding="30,0"
             VerticalOptions="Center">
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
-
+            <!-- Select Category Label -->
             <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
+                Text="Select Category"
+                FontSize="25"
                 HorizontalOptions="Center" />
 
+            <!-- Category Picker -->
+            <Picker
+                x:Name="categoryPicker"
+                Title="Category"
+                SelectedIndexChanged="CategoryPicker_SelectedIndexChanged"
+                HorizontalOptions="Center"
+                FontSize="20" />
+
+            <!-- From Unit Label -->
             <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
+                Text="From Unit"
+                FontSize="25"
+                HorizontalOptions="Center"
+                IsVisible="{Binding IsFromUnitPickerVisible}" />
+
+            <!-- From Unit Picker -->
+            <Picker
+                x:Name="fromUnitPicker"
+                Title="From Unit"
+                HorizontalOptions="Center"
+                FontSize="20"
+                IsVisible="{Binding IsFromUnitPickerVisible}" />
+
+            <!-- Enter Value Label -->
+            <Label
+                Text="Enter Value"
+                FontSize="25"
                 HorizontalOptions="Center" />
 
+            <!-- Input Entry -->
+            <Entry
+                x:Name="inputEntry"
+                Placeholder="Value"
+                HorizontalOptions="Center"
+                FontSize="20"/>
+
+            <!-- To Unit Label -->
+            <Label
+                Text="To Unit"
+                FontSize="25"
+                HorizontalOptions="Center"
+                IsVisible="{Binding IsToUnitPickerVisible}" />
+
+            <!-- To Unit Picker -->
+            <Picker
+                x:Name="toUnitPicker"
+                Title="To Unit"
+                HorizontalOptions="Center"
+                FontSize="20"
+                IsVisible="{Binding IsToUnitPickerVisible}" />
+
+            <!-- Convert Button -->
             <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+                x:Name="convertButton"
+                Text="Convert"
+                Clicked="ConvertButton_Clicked"
+                HorizontalOptions="Center"
+                FontSize="15"/>
 
-        </VerticalStackLayout>
+            <!-- Result Label -->
+            <Label
+                x:Name="resultLabel"
+                FontSize="25"
+                HorizontalOptions="Center"
+                IsVisible="{Binding IsResultLabelVisible}" />
+
+        </StackLayout>
     </ScrollView>
 
 </ContentPage>
-
