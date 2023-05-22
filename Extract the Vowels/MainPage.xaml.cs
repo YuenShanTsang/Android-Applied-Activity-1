@@ -12,38 +12,62 @@ namespace Extract_the_Vowels
             InitializeComponent();
         }
 
-        private void AnalyzeButton_Clicked(object sender, EventArgs e)
+        private void ExtractButton_Clicked(object sender, EventArgs e)
         {
-            string inputWord = InputEntry.Text.ToLower();
+            // Get the input word and trim any leading or trailing whitespace
+            string wordInput = InputEntry.Text.Trim();
 
-            List<char> vowels = new List<char> { 'a', 'e', 'i', 'o', 'u' };
-            List<char> vowelList = new List<char>();
-            List<char> nonVowelList = new List<char>();
-
-            foreach (char c in inputWord)
+            // Check if the input word is valid
+            if (!IsValidInput(wordInput))
             {
-                if (vowels.Contains(c))
+                OutputLabel.Text = "Invalid input. Please enter a single word without spaces.";
+                return;
+            }
+
+            // Create lists to store the vowels and the word without vowels
+            List<char> vowels = new List<char> { 'a', 'e', 'i', 'o', 'u' };
+            List<char> vowelOutput = new List<char>();
+            List<char> withoutVowelOutput = new List<char>();
+
+            // Iterate over each character in the input word
+            foreach (char ch in wordInput)
+            {
+                if (vowels.Contains(ch))
                 {
-                    if (!vowelList.Contains(c))
+                    // Add the vowel to the vowelOutput list if it hasn't been added before
+                    if (!vowelOutput.Contains(ch))
                     {
-                        vowelList.Add(c);
+                        vowelOutput.Add(ch);
                     }
                 }
                 else
                 {
-                    nonVowelList.Add(c);
+                    // Add non-vowel characters to the withoutVowelOutput list
+                    withoutVowelOutput.Add(ch);
                 }
             }
 
-            ResultLabel.Text = "Vowels in the word:";
-            foreach (char vowel in vowelList)
+            // Display the vowels included in the word
+            OutputLabel.Text = "Vowel(s) included in the word:";
+            foreach (char vowel in vowelOutput)
             {
-                int vowelCount = inputWord.Count(c => c == vowel);
-                ResultLabel.Text += $"\n- {vowel} ({vowelCount} occurrence(s))";
+                int vowelCount = wordInput.Count(ch => ch == vowel);
+                OutputLabel.Text += $"\n- {vowel} ({vowelCount} time(s))";
             }
 
-            string wordWithoutVowels = new string(nonVowelList.ToArray());
-            ResultLabel.Text += $"\n\nWord without vowels: {wordWithoutVowels}";
+            // Create a string from the withoutVowelOutput list and display it
+            string wordWithoutVowels = new string(withoutVowelOutput.ToArray());
+            OutputLabel.Text += $"\n\nWord without vowels: {wordWithoutVowels}";
+
+            // Clear the input entry
+            InputEntry.Text = string.Empty;
+        }
+
+        // Validate the input word
+        private bool IsValidInput(string input)
+        {
+            // Check if the input word is not null, empty, contains spaces, and consists only of alphabetic characters
+            return !string.IsNullOrWhiteSpace(input) && !input.Contains(" ") && input.All(char.IsLetter);
         }
     }
 }

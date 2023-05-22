@@ -9,23 +9,27 @@
             Padding="30,0"
             VerticalOptions="Center">
 
+            <!-- Title label -->
             <Label
-                Text="Vowel Extraction"
-                FontSize="24"
+                Text="Extract the Vowels"
+                FontSize="30"
                 HorizontalOptions="Center" />
 
+            <!-- Input entry field -->
             <Entry
                 x:Name="InputEntry"
-                Placeholder="Enter a word"
+                Placeholder="Please enter a word"
                 HorizontalOptions="FillAndExpand" />
 
+            <!-- Extract button -->
             <Button
-                Text="Analyze"
-                Clicked="AnalyzeButton_Clicked"
+                Text="Extract"
+                Clicked="ExtractButton_Clicked"
                 HorizontalOptions="Center" />
 
+            <!-- Output label -->
             <Label
-                x:Name="ResultLabel"
+                x:Name="OutputLabel"
                 FontSize="18"
                 HorizontalOptions="Center" />
 
