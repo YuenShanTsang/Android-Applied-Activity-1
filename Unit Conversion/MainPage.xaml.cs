@@ -127,6 +127,8 @@ namespace Unit_Conversion
                     result = inputValue * 1.46667;
                 else if (selectedToUnit == "Meters per second")
                     result = inputValue * 0.44704;
+                else if (selectedToUnit == "Miles per hour")
+                    result = inputValue;
             }
             else if (selectedFromUnit == "Kilometers per hour")
             {
@@ -137,6 +139,8 @@ namespace Unit_Conversion
                     result = inputValue * 0.911344;
                 else if (selectedToUnit == "Meters per second")
                     result = inputValue * 0.277778;
+                else if (selectedToUnit == "Kilometers per hour")
+                    result = inputValue;
             }
             else if (selectedFromUnit == "Feet per second")
             {
@@ -147,6 +151,8 @@ namespace Unit_Conversion
                     result = inputValue * 1.09728;
                 else if (selectedToUnit == "Meters per second")
                     result = inputValue * 0.3048;
+                else if (selectedToUnit == "Feet per second")
+                    result = inputValue;
             }
             else if (selectedFromUnit == "Meters per second")
             {
@@ -157,6 +163,8 @@ namespace Unit_Conversion
                     result = inputValue * 3.6;
                 else if (selectedToUnit == "Feet per second")
                     result = inputValue * 3.28084;
+                else if (selectedToUnit == "Meters per second")
+                    result = inputValue;
             }
 
             resultLabel.Text = result.ToString();
@@ -176,6 +184,8 @@ namespace Unit_Conversion
                     result = inputValue * 5280;
                 else if (selectedToUnit == "Meters")
                     result = inputValue * 1609.34;
+                else if (selectedToUnit == "Miles")
+                    result = inputValue;
             }
             else if (selectedFromUnit == "Kilometers")
             {
@@ -186,6 +196,8 @@ namespace Unit_Conversion
                     result = inputValue * 3280.84;
                 else if (selectedToUnit == "Meters")
                     result = inputValue * 1000;
+                else if (selectedToUnit == "Kilometers")
+                    result = inputValue;
             }
             else if (selectedFromUnit == "Feet")
             {
@@ -196,6 +208,8 @@ namespace Unit_Conversion
                     result = inputValue * 0.0003048;
                 else if (selectedToUnit == "Meters")
                     result = inputValue * 0.3048;
+                else if (selectedToUnit == "Feet")
+                    result = inputValue;
             }
             else if (selectedFromUnit == "Meters")
             {
@@ -206,6 +220,8 @@ namespace Unit_Conversion
                     result = inputValue * 0.001;
                 else if (selectedToUnit == "Feet")
                     result = inputValue * 3.28084;
+                else if (selectedToUnit == "Meters")
+                    result = inputValue;
             }
 
             resultLabel.Text = result.ToString();

@@ -1,42 +1,44 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Calculate_Change_for_a_Purchase.MainPage">
+    <StackLayout
+        Padding="20">
 
-    <ScrollView>
-        <VerticalStackLayout
-            Spacing="25"
-            Padding="30,0"
-            VerticalOptions="Center">
+        <!-- Price Label -->
+        <Label
+            Text="Price:"
+            FontSize="25" />
 
-            <Image
-                Source="dotnet_bot.png"
-                SemanticProperties.Description="Cute dot net bot waving hi to you!"
-                HeightRequest="200"
-                HorizontalOptions="Center" />
+        <!-- Price Entry -->
+        <Entry
+            x:Name="PriceEntry"
+            Keyboard="Numeric"
+            Placeholder="Enter price"
+            FontSize="25"/>
 
-            <Label
-                Text="Hello, World!"
-                SemanticProperties.HeadingLevel="Level1"
-                FontSize="32"
-                HorizontalOptions="Center" />
+        <!-- Money Given Label -->
+        <Label
+            Text="Money Given:"
+            FontSize="25" />
 
-            <Label
-                Text="Welcome to .NET Multi-platform App UI"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I"
-                FontSize="18"
-                HorizontalOptions="Center" />
+        <!-- Money Given Entry -->
+        <Entry
+            x:Name="MoneyGivenEntry"
+            Keyboard="Numeric"
+            Placeholder="Enter money given"
+            FontSize="25"/>
 
-            <Button
-                x:Name="CounterBtn"
-                Text="Click me"
-                SemanticProperties.Hint="Counts the number of times you click"
-                Clicked="OnCounterClicked"
-                HorizontalOptions="Center" />
+        <!-- Calculate Change Image Button -->
+        <ImageButton
+            Source="calculate_icon.png"
+            Clicked="CalculateChangeButton_Clicked"
+            HeightRequest="130"
+            WidthRequest="130" />
 
-        </VerticalStackLayout>
-    </ScrollView>
-
+        <!-- Change Label -->
+        <Label
+            x:Name="ChangeLabel"
+            Text=""
+            FontSize="25" />
+    </StackLayout>
 </ContentPage>
-
